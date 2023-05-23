@@ -1,0 +1,26 @@
+package Pom;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Baseclasee {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.Driver","./Drivers/chromedriver.exe");
+
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration .ofSeconds(10));
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		
+		OrangehrlLP  OLP = new OrangehrlLP(driver);
+		
+		
+		OrangehrmHP ohp = new OrangehrmHP(driver);
+
+	}
+
+}
